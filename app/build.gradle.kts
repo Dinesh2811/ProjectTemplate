@@ -130,6 +130,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
     implementation("androidx.paging:paging-runtime-ktx:3.2.0")
 
+    // Location Services
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+
 }
 
 
