@@ -18,6 +18,7 @@ Rapidly launch your Android app development with this QuickStart project. All th
 			git pull origin <branch_name>
 # 8. git checkout: Switches to a different branch.
 			git checkout <branch_name>
+			git checkout -b <branch_name>
 # 9. git log: Shows the commit history.
 			git log
 # 10. git diff: Shows the differences between your working directory and the repository.
