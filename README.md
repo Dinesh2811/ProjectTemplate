@@ -18,7 +18,7 @@ Rapidly launch your Android app development with this QuickStart project. All th
 			git checkout <branch_name>
 			git checkout -b <branch_name>
    
-# 7. git pull: Fetches and merges changes from a remote repository to your local branch.
+# 8. git pull: Fetches and merges changes from a remote repository to your local branch.
 			git pull origin <branch_name>
    
 - **Fetch the Latest Changes from GitHub:**
