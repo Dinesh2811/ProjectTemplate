@@ -17,18 +17,18 @@ Rapidly launch your Android app development with this QuickStart project. All th
 # 7. git checkout: Switches to a different branch.
 			git checkout <branch_name>
 			git checkout -b <branch_name>
-   
+
 # 8. git pull: Fetches and merges changes from a remote repository to your local branch.
 			git pull origin <branch_name>
-   
+
 - **Fetch the Latest Changes from GitHub:**
-	> 			git fetch origin Kotlin-DSL
+  > 			git fetch origin <branch_name>
 
 - **Checkout the Remote Branch:**
-	>			git checkout -b Kotlin-DSL origin/Kotlin-DSL
+  >			git checkout -b <branch_name> origin/<branch_name>
 
 - **Discard Local Changes (Optional):**
-	>			git reset --hard origin/Kotlin-DSL
+  >			git reset --hard origin/<branch_name>
 
 # 9. git log: Shows the commit history.
 			git log
