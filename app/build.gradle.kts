@@ -4,7 +4,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")   // ksp
-    id("kotlin-kapt")    // Room plugin
 }
 
 android {
@@ -94,7 +93,6 @@ dependencies {
 
     //  Room components    	2.5.2   -->  2.6.0-alpha03
     implementation("androidx.room:room-runtime:2.6.0-alpha03")
-//    kapt("androidx.room:room-compiler:2.6.0-alpha03")
     ksp("androidx.room:room-compiler:2.6.0-alpha03")
     implementation("androidx.room:room-ktx:2.6.0-alpha03")
 
