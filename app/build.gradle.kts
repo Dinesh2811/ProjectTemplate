@@ -68,8 +68,10 @@ dependencies {
     implementation(libs.bundles.material3)
     implementation(libs.bundles.compose)
     implementation(libs.bundles.compose.material)
-    debugImplementation(libs.bundles.debug.implementation)
+    implementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.bundles.android.test.implementation)
+    debugImplementation(libs.bundles.debug.implementation)
     testImplementation(libs.junit)
 
 
@@ -141,8 +143,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:1.5.0")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.5.0")
 
-    implementation("androidx.compose:compose-bom:2023.08.00")
-    androidTestImplementation("androidx.compose:compose-bom:2023.08.00")
+    implementation(platform("androidx.compose:compose-bom:2023.08.00"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
     testImplementation("junit:junit:4.13.2")
 
 
