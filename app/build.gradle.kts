@@ -64,63 +64,6 @@ android {
 }
 
 dependencies {
-    implementation(libs.bundles.android)
-    implementation(libs.bundles.material3)
-    implementation(libs.bundles.compose)
-    implementation(libs.bundles.compose.material)
-    implementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.bundles.android.test.implementation)
-    debugImplementation(libs.bundles.debug.implementation)
-    testImplementation(libs.junit)
-
-
-    //  ViewModel & LiveData
-    implementation(libs.bundles.lifecycle)
-
-    //  Room components
-    implementation(libs.bundles.room)
-    ksp(libs.androidx.room.compiler)    //  kapt or ksp
-
-    // Glide
-    implementation(libs.glide)
-    annotationProcessor(libs.compiler)
-
-    // Retrofit
-    implementation(libs.bundles.retrofit)
-
-    // HTTP
-    implementation(libs.bundles.okhttp)
-
-    // Gson
-    implementation(libs.bundles.gson)
-
-    // Navigation Component
-    implementation(libs.bundles.navigation.ui)
-
-    // Lottie
-    implementation(libs.lottie)
-
-    // Volley
-    implementation(libs.volley)
-
-    // RecyclerView
-    implementation(libs.androidx.swiperefreshlayout)
-
-    // Paging
-    implementation(libs.bundles.paging)
-
-    // Location Services
-    implementation(libs.play.services.location)
-
-    // Shimmer
-    implementation(libs.shimmer)
-}
-
-/*
-
-
-dependencies {
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.activity:activity-compose:1.7.2")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
@@ -198,5 +141,62 @@ dependencies {
 
 }
 
+
+
+/*
+
+dependencies {
+    implementation(libs.bundles.android)
+    implementation(libs.bundles.material3)
+    implementation(libs.bundles.compose)
+    implementation(libs.bundles.compose.material)
+    implementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.bundles.android.test.implementation)
+    debugImplementation(libs.bundles.debug.implementation)
+    testImplementation(libs.junit)
+
+
+    //  ViewModel & LiveData
+    implementation(libs.bundles.lifecycle)
+
+    //  Room components
+    implementation(libs.bundles.room)
+    ksp(libs.androidx.room.compiler)    //  kapt or ksp
+
+    // Glide
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+
+    // Retrofit
+    implementation(libs.bundles.retrofit)
+
+    // HTTP
+    implementation(libs.bundles.okhttp)
+
+    // Gson
+    implementation(libs.bundles.gson)
+
+    // Navigation Component
+    implementation(libs.bundles.navigation.ui)
+
+    // Lottie
+    implementation(libs.lottie)
+
+    // Volley
+    implementation(libs.volley)
+
+    // RecyclerView
+    implementation(libs.androidx.swiperefreshlayout)
+
+    // Paging
+    implementation(libs.bundles.paging)
+
+    // Location Services
+    implementation(libs.play.services.location)
+
+    // Shimmer
+    implementation(libs.shimmer)
+}
 
  */
