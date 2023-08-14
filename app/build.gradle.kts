@@ -86,8 +86,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:1.5.0")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.5.0")
 
-    implementation("androidx.compose:compose-bom:2023.08.00")
-    androidTestImplementation("androidx.compose:compose-bom:2023.08.00")
+    implementation(platform("androidx.compose:compose-bom:2023.08.00"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
     testImplementation("junit:junit:4.13.2")
 
 
@@ -148,8 +148,10 @@ dependencies {
     implementation(libs.bundles.material3)
     implementation(libs.bundles.compose)
     implementation(libs.bundles.compose.material)
-    debugImplementation(libs.bundles.debug.implementation)
+    implementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.bundles.android.test.implementation)
+    debugImplementation(libs.bundles.debug.implementation)
     testImplementation(libs.junit)
 
 
@@ -197,7 +199,9 @@ dependencies {
 
 */
 
+
 /*
+
 
 [versions]
 agp = "8.1.0"
@@ -344,12 +348,12 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 [bundles]
 android = ["androidx-core-ktx", "androidx-activity-compose", "androidx-appcompat", "androidx-constraintlayout", "material"]
 material3 = ["androidx-material3", "androidx-material3-android"]
-compose = ["androidx-compose-bom", "androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview", "androidx-animation-core",
+compose = ["androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview", "androidx-animation-core",
     "androidx-animation", "androidx-foundation", "androidx-ui-geometry", "androidx-foundation-layout", "androidx-runtime-livedata",
     "androidx-ui-text", "androidx-ui-util", "androidx-ui-viewbinding"]
 compose-material = ["androidx-material", "androidx-material-icons-core", "androidx-material-icons-extended"]
 debug-implementation = ["androidx-ui-tooling", "androidx-ui-test-manifest"]
-android-test-implementation = ["androidx-junit", "androidx-espresso-core", "androidx-ui-test-junit4", "androidx-compose-bom"]
+android-test-implementation = ["androidx-junit", "androidx-espresso-core", "androidx-ui-test-junit4"]
 lifecycle = ["androidx-lifecycle-runtime-ktx", "androidx-lifecycle-viewmodel-ktx", "androidx-lifecycle-viewmodel-compose",
     "androidx-lifecycle-livedata-ktx", "androidx-lifecycle-viewmodel-savedstate", "androidx-lifecycle-runtime-compose"]
 
@@ -359,5 +363,6 @@ okhttp = ["okhttp", "logging-interceptor"]
 gson = ["converter-gson", "gson"]
 navigation-ui = ["androidx-navigation-fragment-ktx", "androidx-navigation-ui-ktx"]
 paging = ["androidx-lifecycle-extensions", "androidx-paging-runtime-ktx"]
+
 
  */
