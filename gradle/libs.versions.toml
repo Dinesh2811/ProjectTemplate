@@ -1,19 +1,21 @@
 [versions]
 agp = "8.2.0"
 kotlin = "1.9.21"
+ksp = "1.9.21-1.0.15"
+hilt = "2.49"
 
 core-ktx = "1.12.0"
-activity-compose = "1.8.1"
+activity-compose = "1.8.2"
 appcompat = "1.6.1"
 constraintlayout = "2.1.4"
-material = "1.11.0-rc01"
+material = "1.11.0"
 
-material3 = "1.2.0-alpha12"
+material3 = "1.2.0-beta01"
 kotlinx-coroutines = "1.7.3"
 
 compose-bom = "2023.10.01"
 #compose = "1.5.4"
-compose = "1.6.0-beta02"
+compose = "1.6.0-beta03"
 
 test-junit = "1.1.5"
 espresso-core = "3.5.1"
@@ -23,12 +25,12 @@ room = "2.6.1"
 lifecycle = "2.6.2"
 glide = "4.16.0"
 retrofit = "2.9.0"
-okhttp = "5.0.0-alpha.11"
+okhttp = "5.0.0-alpha.12"
 
 converter-gson = "2.9.0"
 gson = "2.10.1"
 
-navigation = "2.7.5"
+navigation = "2.7.6"
 lottie = "6.2.0"
 volley = "1.2.1"
 swiperefreshlayout = "1.1.0"
@@ -154,8 +156,11 @@ hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt-co
 
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
+application = { id = "com.android.application", version.ref = "agp" }
+library = { id = "com.android.library", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 
 
