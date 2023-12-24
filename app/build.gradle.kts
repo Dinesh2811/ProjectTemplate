@@ -1,6 +1,8 @@
 plugins {
-//    alias(libs.plugins.androidApplication)
+//    alias(libs.plugins.application)
 //    alias(libs.plugins.kotlinAndroid)
+//    alias(libs.plugins.ksp)
+//    alias(libs.plugins.hiltAndroid)
 
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -14,22 +16,20 @@ android {
     compileSdk = 34
 //    compileSdkPreview = "UpsideDownCake"
 
-    /*
-    signingConfigs {
-        create("release"){
-            storeFile = file("../dinesh28-release-key.jks")
-            storePassword = "dinesh28Android"
-            keyAlias = "dinesh28-key-alias"
-            keyPassword = "dinesh28Android"
-        }
-        getByName("debug") {
-            storeFile = file("../dinesh28-release-key.jks")
-            storePassword = "dinesh28Android"
-            keyAlias = "dinesh28-key-alias"
-            keyPassword = "dinesh28Android"
-        }
-    }
-    */
+//    signingConfigs {
+//        create("release"){
+//            storeFile = file("${rootProject.projectDir}/dinesh28-release-key.jks")
+//            storePassword = "dinesh28Android"
+//            keyAlias = "dinesh28-key-alias"
+//            keyPassword = "dinesh28Android"
+//        }
+//        getByName("debug") {
+//            storeFile = file("${rootProject.projectDir}/dinesh28-release-key.jks")
+//            storePassword = "dinesh28Android"
+//            keyAlias = "dinesh28-key-alias"
+//            keyPassword = "dinesh28Android"
+//        }
+//    }
 
     defaultConfig {
         applicationId = "com.dinesh.android"
@@ -67,34 +67,31 @@ android {
         }
     }
 
-    /*
-    flavorDimensions.add("versions")
+//    flavorDimensions.add("versions")
+//    productFlavors {
+//        create("freeVersion") {     //  if (BuildConfig.FLAVOR == "freeVersion")
+//            dimension = "versions"
+//            applicationIdSuffix = ".free"
+////            applicationId = "com.dinesh.free"
+////            versionNameSuffix = "-free"
+//        }
+//        create("paidVersion") {
+//            dimension = "versions"
+//            applicationIdSuffix = ".paid"
+////            applicationId = "com.dinesh.paid"
+////            versionNameSuffix = "-paid"
+//        }
+//    }
 
-    productFlavors {
-        create("freeVersion") {     //  if (BuildConfig.FLAVOR == "freeVersion")
-            dimension = "versions"
-            applicationIdSuffix = ".free"
-//            applicationId = "com.dinesh.free"
-//            versionNameSuffix = "-free"
-        }
-        create("paidVersion") {
-            dimension = "versions"
-            applicationIdSuffix = ".paid"
-//            applicationId = "com.dinesh.paid"
-//            versionNameSuffix = "-paid"
-        }
-    }
-    */
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
+//    compileOptions {
+//        sourceCompatibility = JavaVersion.VERSION_17
+//        targetCompatibility = JavaVersion.VERSION_17
+//    }
+//    kotlinOptions {
+//        jvmTarget = JavaVersion.VERSION_17.toString()
+//    }
     kotlin {
-        jvmToolchain(JavaVersion.VERSION_17.toString().toInt())
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmToolchain(17)
     }
     buildFeatures {
         buildConfig = true
@@ -102,7 +99,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.6"
+        kotlinCompilerExtensionVersion = "1.5.7"
     }
     packaging {
         resources {
@@ -156,6 +153,10 @@ dependencies {
     // HTTP
     implementation(libs.bundles.okhttp)
 
+    // Chucker
+    debugImplementation(libs.chucker.debug)
+    releaseImplementation(libs.chucker.release)
+
     // Navigation Component
     implementation(libs.bundles.navigation)
 
@@ -185,5 +186,7 @@ dependencies {
     //  Hilt
     implementation(libs.bundles.hilt)
     ksp(libs.bundles.hilt.compiler)
-}
 
+    // WorkManager
+    implementation(libs.work.manager)
+}
