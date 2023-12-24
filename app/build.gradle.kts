@@ -1,6 +1,8 @@
 plugins {
-//    alias(libs.plugins.androidApplication)
+//    alias(libs.plugins.application)
 //    alias(libs.plugins.kotlinAndroid)
+//    alias(libs.plugins.ksp)
+//    alias(libs.plugins.hiltAndroid)
 
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -14,22 +16,20 @@ android {
     compileSdk = 34
 //    compileSdkPreview = "UpsideDownCake"
 
-    /*
-    signingConfigs {
-        create("release"){
-            storeFile = file("../dinesh28-release-key.jks")
-            storePassword = "dinesh28Android"
-            keyAlias = "dinesh28-key-alias"
-            keyPassword = "dinesh28Android"
-        }
-        getByName("debug") {
-            storeFile = file("../dinesh28-release-key.jks")
-            storePassword = "dinesh28Android"
-            keyAlias = "dinesh28-key-alias"
-            keyPassword = "dinesh28Android"
-        }
-    }
-    */
+//    signingConfigs {
+//        create("release"){
+//            storeFile = file("${rootProject.projectDir}/dinesh28-release-key.jks")
+//            storePassword = "dinesh28Android"
+//            keyAlias = "dinesh28-key-alias"
+//            keyPassword = "dinesh28Android"
+//        }
+//        getByName("debug") {
+//            storeFile = file("${rootProject.projectDir}/dinesh28-release-key.jks")
+//            storePassword = "dinesh28Android"
+//            keyAlias = "dinesh28-key-alias"
+//            keyPassword = "dinesh28Android"
+//        }
+//    }
 
     defaultConfig {
         applicationId = "com.dinesh.android"
@@ -67,34 +67,31 @@ android {
         }
     }
 
-    /*
-    flavorDimensions.add("versions")
+//    flavorDimensions.add("versions")
+//    productFlavors {
+//        create("freeVersion") {     //  if (BuildConfig.FLAVOR == "freeVersion")
+//            dimension = "versions"
+//            applicationIdSuffix = ".free"
+////            applicationId = "com.dinesh.free"
+////            versionNameSuffix = "-free"
+//        }
+//        create("paidVersion") {
+//            dimension = "versions"
+//            applicationIdSuffix = ".paid"
+////            applicationId = "com.dinesh.paid"
+////            versionNameSuffix = "-paid"
+//        }
+//    }
 
-    productFlavors {
-        create("freeVersion") {     //  if (BuildConfig.FLAVOR == "freeVersion")
-            dimension = "versions"
-            applicationIdSuffix = ".free"
-//            applicationId = "com.dinesh.free"
-//            versionNameSuffix = "-free"
-        }
-        create("paidVersion") {
-            dimension = "versions"
-            applicationIdSuffix = ".paid"
-//            applicationId = "com.dinesh.paid"
-//            versionNameSuffix = "-paid"
-        }
-    }
-    */
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
+//    compileOptions {
+//        sourceCompatibility = JavaVersion.VERSION_17
+//        targetCompatibility = JavaVersion.VERSION_17
+//    }
+//    kotlinOptions {
+//        jvmTarget = JavaVersion.VERSION_17.toString()
+//    }
     kotlin {
-        jvmToolchain(JavaVersion.VERSION_17.toString().toInt())
-    }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmToolchain(17)
     }
     buildFeatures {
         buildConfig = true
@@ -102,7 +99,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.6"
+        kotlinCompilerExtensionVersion = "1.5.7"
     }
     packaging {
         resources {
@@ -132,19 +129,19 @@ android {
 
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.activity:activity-compose:1.8.1")
+    implementation("androidx.activity:activity-compose:1.8.2")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("com.google.android.material:material:1.11.0-beta01")
+    implementation("com.google.android.material:material:1.11.0")
 
-    implementation("androidx.compose.material3:material3:1.2.0-alpha12")
-    implementation("androidx.compose.material3:material3-android:1.2.0-alpha12")
-    implementation("androidx.compose.material3:material3-window-size-class:1.2.0-alpha12")
+    implementation("androidx.compose.material3:material3:1.2.0-beta01")
+    implementation("androidx.compose.material3:material3-android:1.2.0-beta01")
+    implementation("androidx.compose.material3:material3-window-size-class:1.2.0-beta01")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
 //    val composeVersion = "1.5.4"
-    val composeVersion = "1.6.0-beta02"
+    val composeVersion = "1.6.0-beta03"
     implementation(platform("androidx.compose:compose-bom:2023.10.01"))
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.ui:ui-graphics:$composeVersion")
@@ -202,13 +199,17 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1") // Used to convert Java Object into JSON representation
 
     // HTTP
-    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.11")
-    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11")
+    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.12")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.12")
+
+    // Chucker
+    debugImplementation("com.github.chuckerteam.chucker:library:4.0.0")
+    releaseImplementation("com.github.chuckerteam.chucker:library-no-op:4.0.0")
 
     // Navigation Component
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.5")
-    implementation("androidx.navigation:navigation-compose:2.7.5")  // Navigation Compose
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-compose:2.7.6")  // Navigation Compose
 
     // Paging
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
@@ -228,17 +229,19 @@ dependencies {
     implementation("com.android.volley:volley:1.2.1")
 
     //  Dagger
-    implementation("com.google.dagger:dagger:2.49")
-    implementation("com.google.dagger:dagger-android:2.49")
-    implementation("com.google.dagger:dagger-android-support:2.49")
-    ksp("com.google.dagger:dagger-compiler:2.49")
+    implementation("com.google.dagger:dagger:2.50")
+    implementation("com.google.dagger:dagger-android:2.50")
+    implementation("com.google.dagger:dagger-android-support:2.50")
+    ksp("com.google.dagger:dagger-compiler:2.50")
 
     //  Hilt
     implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
-    implementation("com.google.dagger:hilt-android:2.49")
-    ksp("com.google.dagger:hilt-android-compiler:2.49")
+    implementation("com.google.dagger:hilt-android:2.50")
+    ksp("com.google.dagger:hilt-android-compiler:2.50")
     ksp("androidx.hilt:hilt-compiler:1.1.0")
 
+    // WorkManager
+    implementation("androidx.work:work-runtime-ktx:2.9.0")
 }
 
 
@@ -270,6 +273,10 @@ dependencies {
     // HTTP
     implementation(libs.bundles.okhttp)
 
+    // Chucker
+    debugImplementation(libs.chucker.debug)
+    releaseImplementation(libs.chucker.release)
+
     // Navigation Component
     implementation(libs.bundles.navigation)
 
@@ -299,6 +306,9 @@ dependencies {
     //  Hilt
     implementation(libs.bundles.hilt)
     ksp(libs.bundles.hilt.compiler)
+
+    // WorkManager
+    implementation(libs.work.manager)
 }
 
  */
@@ -306,20 +316,22 @@ dependencies {
 /*
 [versions]
 agp = "8.2.0"
-kotlin = "1.9.21"
+kotlin = "1.9.22"
+ksp = "1.9.21-1.0.16"
+hilt = "2.50"
 
 core-ktx = "1.12.0"
-activity-compose = "1.8.1"
+activity-compose = "1.8.2"
 appcompat = "1.6.1"
 constraintlayout = "2.1.4"
-material = "1.11.0-rc01"
+material = "1.11.0"
 
-material3 = "1.2.0-alpha12"
+material3 = "1.2.0-beta01"
 kotlinx-coroutines = "1.7.3"
 
 compose-bom = "2023.10.01"
 #compose = "1.5.4"
-compose = "1.6.0-beta02"
+compose = "1.6.0-beta03"
 
 test-junit = "1.1.5"
 espresso-core = "3.5.1"
@@ -329,12 +341,13 @@ room = "2.6.1"
 lifecycle = "2.6.2"
 glide = "4.16.0"
 retrofit = "2.9.0"
-okhttp = "5.0.0-alpha.11"
+okhttp = "5.0.0-alpha.12"
+chucker = "4.0.0"
 
 converter-gson = "2.9.0"
 gson = "2.10.1"
 
-navigation = "2.7.5"
+navigation = "2.7.6"
 lottie = "6.2.0"
 volley = "1.2.1"
 swiperefreshlayout = "1.1.0"
@@ -345,10 +358,12 @@ paging-runtime-ktx = "3.2.1"
 play-services-location = "21.0.1"
 shimmer = "0.5.0"
 
-dagger = "2.49"
+dagger = "2.50"
 
-hilt-android = "2.49"
+hilt-android = "2.50"
 hilt-compiler = "1.1.0"
+
+work-manager = "2.9.0"
 
 
 [libraries]
@@ -423,6 +438,10 @@ gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp" }
 
+#  Chucker
+chucker-debug = { module = "com.github.chuckerteam.chucker:library", version.ref = "chucker" }
+chucker-release = { module = "com.github.chuckerteam.chucker:library-no-op", version.ref = "chucker" }
+
 #  Navigation Component
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
@@ -457,11 +476,16 @@ androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-com
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt-android" }
 hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt-compiler" }
 
+#  WorkManager
+work-manager = { module = "androidx.work:work-runtime-ktx", version.ref = "work-manager" }
 
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
+application = { id = "com.android.application", version.ref = "agp" }
+library = { id = "com.android.library", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 
 
