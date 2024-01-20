@@ -33,7 +33,7 @@ android {
 
     defaultConfig {
         applicationId = "com.dinesh.android"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -99,7 +99,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.7"
+        kotlinCompilerExtensionVersion = "1.5.8"
     }
     packaging {
         resources {
@@ -189,4 +189,13 @@ dependencies {
 
     // WorkManager
     implementation(libs.work.manager)
+
+    implementation("androidx.core:core-splashscreen:1.0.1")     // Splash Screen
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:3.0-alpha-1")     // LeakCanary
+
+    // Pluto
+    debugImplementation("com.plutolib:pluto:2.2.1")
+    debugImplementation("com.plutolib.plugins:exceptions:2.2.1")
+    releaseImplementation("com.plutolib.plugins:exceptions-no-op:2.2.1")
+    releaseImplementation("com.plutolib:pluto-no-op:2.2.1")
 }
