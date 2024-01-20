@@ -33,7 +33,7 @@ android {
 
     defaultConfig {
         applicationId = "com.dinesh.android"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -99,7 +99,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.7"
+        kotlinCompilerExtensionVersion = "1.5.8"
     }
     packaging {
         resources {
@@ -134,14 +134,14 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.material:material:1.11.0")
 
-    implementation("androidx.compose.material3:material3:1.2.0-beta01")
-    implementation("androidx.compose.material3:material3-android:1.2.0-beta01")
-    implementation("androidx.compose.material3:material3-window-size-class:1.2.0-beta01")
+    implementation("androidx.compose.material3:material3:1.2.0-beta02")
+    implementation("androidx.compose.material3:material3-android:1.2.0-beta02")
+    implementation("androidx.compose.material3:material3-window-size-class:1.2.0-beta02")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
 //    val composeVersion = "1.5.4"
-    val composeVersion = "1.6.0-beta03"
+    val composeVersion = "1.6.0-rc01"
     implementation(platform("androidx.compose:compose-bom:2023.10.01"))
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.ui:ui-graphics:$composeVersion")
@@ -173,18 +173,18 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
 
 
-    //  Room components    	2.5.2   -->  2.6.0-alpha03
+    //  Room components
     implementation("androidx.room:room-runtime:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
 
     //  ViewModel & LiveData
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
@@ -216,7 +216,7 @@ dependencies {
     implementation("androidx.paging:paging-runtime-ktx:3.2.1")
 
     // Animation
-    implementation("com.airbnb.android:lottie:6.2.0")   // Lottie
+    implementation("com.airbnb.android:lottie:6.3.0")   // Lottie
     implementation("com.facebook.shimmer:shimmer:0.5.0")    //  Shimmer
 
     // Location Services
@@ -242,6 +242,15 @@ dependencies {
 
     // WorkManager
     implementation("androidx.work:work-runtime-ktx:2.9.0")
+
+    implementation("androidx.core:core-splashscreen:1.0.1")     // Splash Screen
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:3.0-alpha-1")     // LeakCanary
+
+    // Pluto
+    debugImplementation("com.plutolib:pluto:2.2.1")
+    debugImplementation("com.plutolib.plugins:exceptions:2.2.1")
+    releaseImplementation("com.plutolib.plugins:exceptions-no-op:2.2.1")
+    releaseImplementation("com.plutolib:pluto-no-op:2.2.1")
 }
 
 
@@ -309,13 +318,23 @@ dependencies {
 
     // WorkManager
     implementation(libs.work.manager)
+
+    implementation("androidx.core:core-splashscreen:1.0.1")     // Splash Screen
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:3.0-alpha-1")     // LeakCanary
+
+    // Pluto
+    debugImplementation("com.plutolib:pluto:2.2.1")
+    debugImplementation("com.plutolib.plugins:exceptions:2.2.1")
+    releaseImplementation("com.plutolib.plugins:exceptions-no-op:2.2.1")
+    releaseImplementation("com.plutolib:pluto-no-op:2.2.1")
 }
 
  */
 
 /*
+
 [versions]
-agp = "8.2.0"
+agp = "8.2.1"
 kotlin = "1.9.22"
 ksp = "1.9.21-1.0.16"
 hilt = "2.50"
@@ -326,19 +345,20 @@ appcompat = "1.6.1"
 constraintlayout = "2.1.4"
 material = "1.11.0"
 
-material3 = "1.2.0-beta01"
+material3 = "1.2.0-beta02"
 kotlinx-coroutines = "1.7.3"
 
 compose-bom = "2023.10.01"
 #compose = "1.5.4"
-compose = "1.6.0-beta03"
+compose = "1.6.0-rc01"
+constraintlayout-compose = "1.0.1"
 
 test-junit = "1.1.5"
 espresso-core = "3.5.1"
 junit = "4.13.2"
 
 room = "2.6.1"
-lifecycle = "2.6.2"
+lifecycle = "2.7.0"
 glide = "4.16.0"
 retrofit = "2.9.0"
 okhttp = "5.0.0-alpha.12"
@@ -348,7 +368,7 @@ converter-gson = "2.9.0"
 gson = "2.10.1"
 
 navigation = "2.7.6"
-lottie = "6.2.0"
+lottie = "6.3.0"
 volley = "1.2.1"
 swiperefreshlayout = "1.1.0"
 
@@ -396,6 +416,7 @@ androidx-ui-viewbinding = { module = "androidx.compose.ui:ui-viewbinding", versi
 androidx-material = { module = "androidx.compose.material:material", version.ref = "compose" }
 androidx-material-icons-core = { module = "androidx.compose.material:material-icons-core", version.ref = "compose" }
 androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
+constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayout-compose" }
 
 #  androidTestImplementation
 androidx-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
@@ -496,7 +517,7 @@ android = ["androidx-core-ktx", "androidx-activity-compose", "androidx-appcompat
 compose = ["androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview", "androidx-foundation",
     "androidx-ui-geometry", "androidx-foundation-layout", "androidx-runtime-livedata", "androidx-animation-core",
     "androidx-animation", "androidx-ui-text", "androidx-ui-util", "androidx-ui-viewbinding", "androidx-material",
-    "androidx-material-icons-core", "androidx-material-icons-extended"]
+    "androidx-material-icons-core", "androidx-material-icons-extended", "constraintlayout-compose"]
 
 lifecycle = ["androidx-lifecycle-runtime-ktx", "androidx-lifecycle-viewmodel-ktx", "androidx-lifecycle-viewmodel-compose",
     "androidx-lifecycle-livedata-ktx", "androidx-lifecycle-viewmodel-savedstate", "androidx-lifecycle-runtime-compose"]
