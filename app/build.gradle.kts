@@ -99,7 +99,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
+        kotlinCompilerExtensionVersion = "1.5.9"
     }
     packaging {
         resources {
@@ -335,9 +335,9 @@ dependencies {
 /*
 
 [versions]
-agp = "8.2.1"
+agp = "8.2.2"
 kotlin = "1.9.22"
-ksp = "1.9.21-1.0.16"
+ksp = "1.9.22-1.0.17"
 hilt = "2.50"
 
 core-ktx = "1.12.0"
@@ -346,12 +346,12 @@ appcompat = "1.6.1"
 constraintlayout = "2.1.4"
 material = "1.11.0"
 
-material3 = "1.2.0-beta02"
+material3 = "1.2.0"
 kotlinx-coroutines = "1.7.3"
 
-compose-bom = "2023.10.01"
-#compose = "1.5.4"
-compose = "1.6.0-rc01"
+compose-bom = "2024.02.00"
+#compose = "1.6.1"
+compose = "1.7.0-alpha02"
 constraintlayout-compose = "1.0.1"
 
 test-junit = "1.1.5"
@@ -368,7 +368,7 @@ chucker = "4.0.0"
 converter-gson = "2.9.0"
 gson = "2.10.1"
 
-navigation = "2.7.6"
+navigation = "2.7.7"
 lottie = "6.3.0"
 volley = "1.2.1"
 swiperefreshlayout = "1.1.0"
@@ -376,7 +376,7 @@ swiperefreshlayout = "1.1.0"
 lifecycle-extensions = "2.2.0"
 paging-runtime-ktx = "3.2.1"
 
-play-services-location = "21.0.1"
+play-services-location = "21.1.0"
 shimmer = "0.5.0"
 
 dagger = "2.50"
@@ -539,5 +539,6 @@ dagger = ["dagger", "dagger-android-support", "dagger-android"]
 
 hilt = ["hilt-android", "androidx-hilt-navigation-compose"]
 hilt-compiler = ["hilt-android-compiler", "hilt-compiler"]
+
 
  */
