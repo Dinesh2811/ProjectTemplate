@@ -99,7 +99,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
+        kotlinCompilerExtensionVersion = "1.5.9"
     }
     packaging {
         resources {
@@ -134,15 +134,15 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("com.google.android.material:material:1.11.0")
 
-    implementation("androidx.compose.material3:material3:1.2.0-beta02")
-    implementation("androidx.compose.material3:material3-android:1.2.0-beta02")
-    implementation("androidx.compose.material3:material3-window-size-class:1.2.0-beta02")
+    implementation("androidx.compose.material3:material3:1.2.0")
+    implementation("androidx.compose.material3:material3-android:1.2.0")
+    implementation("androidx.compose.material3:material3-window-size-class:1.2.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
-//    val composeVersion = "1.5.4"
-    val composeVersion = "1.6.0-rc01"
-    implementation(platform("androidx.compose:compose-bom:2023.10.01"))
+//    val composeVersion = "1.6.1"
+    val composeVersion = "1.7.0-alpha02"
+    implementation(platform("androidx.compose:compose-bom:2024.02.00"))
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.ui:ui-graphics:$composeVersion")
     implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
@@ -160,7 +160,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended:$composeVersion")
 
     // androidTestImplementation
-    androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.01"))
+    androidTestImplementation(platform("androidx.compose:compose-bom:2024.02.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -207,9 +207,9 @@ dependencies {
     releaseImplementation("com.github.chuckerteam.chucker:library-no-op:4.0.0")
 
     // Navigation Component
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
-    implementation("androidx.navigation:navigation-compose:2.7.6")  // Navigation Compose
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-compose:2.7.7")  // Navigation Compose
 
     // Paging
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
@@ -220,7 +220,7 @@ dependencies {
     implementation("com.facebook.shimmer:shimmer:0.5.0")    //  Shimmer
 
     // Location Services
-    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.android.gms:play-services-location:21.1.0")
 
     // RecyclerView
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
